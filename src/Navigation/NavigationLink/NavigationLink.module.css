@@ -1,0 +1,23 @@
+.NavLink{
+	display: flex;
+	align-items: flex-end;
+}
+.NavLink svg{
+	width: 15px;
+	height: 15px;
+	fill:white;
+	margin-left: 5px;
+	margin-bottom: 10px;
+}
+
+
+.NavLink object svg path{
+}
+
+.navigationLink{
+	color:#999;
+}
+
+.navigationLink:hover{
+color: white;
+}
