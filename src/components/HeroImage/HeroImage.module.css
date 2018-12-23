@@ -1,0 +1,54 @@
+.Banner{
+	height: auto;
+	background-size: cover;
+	background-repeat: no-repeat; 
+	position: relative;
+	overflow: hidden;
+	display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.BannerContainer{
+	width: 100%;
+	height: 100%;
+	padding: 10px;
+	background-color:rgba(255,255,255, 0.7);
+}
+
+.BannerContainer h1{
+	color:#D9754E;
+	padding-top:5%;
+	padding-bottom:5%;
+}
+
+.BannerContainer p{
+	width: 100%;
+	color:#D9754E;
+	padding-bottom:5%;
+}
+
+@media (min-width: 576px) { 
+
+}
+
+/*// Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+	.BannerContainer p{
+		width: 50%;
+	}
+	.Banner{
+		height: calc(100vh - 75px);
+	    justify-content: flex-end;
+	}	
+	.BannerContainer{
+		height: auto;
+	}
+}
+
+/*// Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {  }
+
+/*// Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {  }

@@ -100,7 +100,7 @@ this.setState(prevState => ({
 
 
  		return(
- 		<div onMouseOver={()=>this.subMenuHandlerOpen(index)} onMouseLeave={()=>this.subMenuHandlerClose(index)}  key={index} className={this.state.burgerMenuStatus?" dropdown displayBlock py-2 d-md-inline-block":" dropdown py-2 d-none d-md-inline-block"}>
+ 		<div onMouseOver={()=>this.subMenuHandlerOpen(index)} onMouseLeave={()=>this.subMenuHandlerClose(index)}  key={index} className={this.state.burgerMenuStatus?"displayBlock position-relative":"  position-relative  "+[classes.dropDown,classes.ActiveNav].join(" ")}>
 	 		 <NavigationLink  subMenuIndicator={currentObject.subMenuItems.length>0?true:false}  linkIndex={index} href={currentObject.href}>
 	 		 	{currentObject.listName}
 	 		 </NavigationLink>
@@ -114,7 +114,7 @@ this.setState(prevState => ({
   	<ReactAux>
   	<nav  className={classes.siteHeader+" sticky-top"}>
 
-      	<div style={{paddingTop:"10px"}} className="container d-flex flex-column flex-md-row justify-content-md-between">
+      	<div className={classes.navContainer+" container d-flex flex-column flex-md-row justify-content-md-between"}>
 	        <a className="text-center" href="/#">
 	         	<Logo/>
 	        </a>

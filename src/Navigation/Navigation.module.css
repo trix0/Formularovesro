@@ -1,7 +1,16 @@
+.ActiveNav{
+  border-bottom: 3px solid #D9754E;
+}
+.dropDown{
+  height: 100%;
+  display: none;
+  padding: 0px 5px;
+}
 .siteHeader {
   display: flex;
-  background-color: black;
-  min-height: 64px;
+  background-color: #222B31;
+  min-height: 75px;
+ /* border-bottom: 1px solid #CDD6D5;*/
 }
 .siteHeader div{
 min-height: 40px;
@@ -16,7 +25,7 @@ min-height: 40px;
 }
 
 .dropdownContent{
-  top:55px;
+  top:75px;
   display: none;
   min-width: 200px;
   width: 120%;
@@ -42,7 +51,7 @@ color:white;
 }
 
 .dropdownDisplay {
-  background-color: black;  
+  background-color: #222B31;  
   justify-content: center;
   display: flex;
   flex-direction: column;
@@ -52,7 +61,9 @@ color:white;
 .dropdown:hover a span {
   color:white;
 }
-
+.dropdown{
+  height: 100%;
+}
 .dropdown:hover div svg path{
 fill:white;
 transform: rotate(180);
@@ -62,6 +73,10 @@ transform: rotate(180);
   display: none !important;
 }
 
+  .navContainer{
+  display: flex;
+  justify-content: center;
+  }
 @media (min-width: 576px) { 
 
 }
@@ -71,6 +86,15 @@ transform: rotate(180);
   .dropdownContent{
     position: absolute;
   }
+  .navContainer{
+display: flex;
+align-items: center;
+}
+.dropDown{
+display: flex !important;
+align-items: center;
+}
+
 
 }
 

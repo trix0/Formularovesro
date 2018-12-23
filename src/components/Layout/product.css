@@ -82,7 +82,6 @@ html{
 
 
 .banner{
-  background-image: url("../../assets/images/banner.jpg");
   background-repeat: no-repeat;
   background-origin: content-box;
   background-size:cover;
