@@ -1,0 +1,53 @@
+.Section{
+	margin-top: 20px;
+	margin-bottom: 100px;
+}
+.Container{
+	display: flex;
+	flex-direction: column;
+	border: 3px solid #D9754E;
+	border-radius: 5px;
+	padding: 30px;
+}
+.Image{
+	display: flex;
+	justify-content: center;
+}
+figure{
+	display: flex;
+	justify-content: center;
+}
+figure figcaption{
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+figcaption h3, figcaption span{
+	color:#D9754E;
+}
+
+.About{
+	font-size: 1.2em;
+	padding: 0px 10px;
+	color:#7A9AA5;
+}
+@media (min-width: 576px) { 
+
+}
+
+/*// Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+	.About{
+		padding: 0px 40px;
+	}
+	.Container{
+	flex-direction: row;		
+	}
+}
+
+/*// Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {  }
+
+/*// Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {  }

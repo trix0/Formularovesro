@@ -3,13 +3,14 @@ import classes from "./Navigation.module.css";
 import ReactAux from "../hoc/ReactAux";
 import NavigationLink from "./NavigationLink/NavigationLink";
 import Logo from "../components/Logo/Logo";
+import {Link} from 'react-router-dom';
 import BurgerMenu from "./BurgerMenu/BurgerMenu"
 class Navigation extends Component {
 		state={
 		navigation:[
 		{
 			listName:"O nás",
-			href:"/#",
+			href:"/o-nas",
 			subMenuItems:[]
 		},
 		{
@@ -33,7 +34,7 @@ class Navigation extends Component {
 		},
 		{
 			listName:"Služby",
-			href:"/#",
+			href:"/sluzby",
 			subMenuItems:[
 			{
 				listName:"Test3",
@@ -115,9 +116,9 @@ this.setState(prevState => ({
   	<nav  className={classes.siteHeader+" sticky-top"}>
 
       	<div className={classes.navContainer+" container d-flex flex-column flex-md-row justify-content-md-between"}>
-	        <a className="text-center" href="/#">
+	        <Link className="text-center" to="/">
 	         	<Logo/>
-	        </a>
+	        </Link>
 	  {navigation}
 	        
 

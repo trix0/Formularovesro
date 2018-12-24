@@ -1,5 +1,6 @@
 import React from 'react';
 import classes from "./NavigationLink.module.css"
+import {Link} from 'react-router-dom';
 const navigationLink= (props) => {
 	let icon=null;
 	let linkType=props.children;
@@ -14,9 +15,9 @@ const navigationLink= (props) => {
 	}
 	return (
 		<div className={classes.NavLink}>
-			<a  className="py-2  d-md-inline-block navigationLink py-2  d-md-inline-block"  href={props.href}>
+			<Link  className="py-2  d-md-inline-block navigationLink py-2  d-md-inline-block"  to={props.href}>
 			{linkType}
-			</a>
+			</Link>
 			{icon}
 		</div>)
 }
