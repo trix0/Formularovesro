@@ -1,3 +1,8 @@
 .Footer a{
 	color:white;
 }
+
+.Footer a:hover{
+color:#D9754E;
+}
+

@@ -5,6 +5,7 @@ import {Route} from "react-router-dom";
 import Index from "./components/Pages/Index/Index";
 import Onas from "./components/Pages/Onas/Onas";
 import Sluzby from "./components/Pages/Sluzby/Sluzby";
+import AkoFungujeme from "./components/Pages/AkoFungujeme/AkoFungujeme";
 class App extends Component {
   render() {
     return (
@@ -13,6 +14,7 @@ class App extends Component {
         	<Route path="/" exact component={Index}/>
         	<Route path="/o-nas" exact component={Onas}/>
         	<Route path="/sluzby" exact component={Sluzby}/>
+        	<Route path="/ako-fungujeme" exact component={AkoFungujeme}/>
         </Layout>
       </div>
     );

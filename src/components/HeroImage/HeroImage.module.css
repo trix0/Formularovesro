@@ -40,10 +40,10 @@
 	}
 	.Banner{
 		height: calc(100vh - 75px);
-	    justify-content: flex-end;
 	}	
 	.BannerContainer{
 		height: auto;
+		padding-bottom: 50px;
 	}
 }
 

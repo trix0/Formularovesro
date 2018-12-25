@@ -1,0 +1,15 @@
+.Step{
+	border: 3px solid #D9754E;
+	border-radius: 5px;
+	padding: 30px;
+	padding-top: 10px;
+	margin-bottom: 20px;
+}
+.Step h1{
+	font-size: 1.5em;
+	margin:20px 0;
+}
+
+.Step p{
+	font-size: 1.4em;
+}
