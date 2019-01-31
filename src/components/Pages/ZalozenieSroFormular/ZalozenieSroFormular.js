@@ -102,7 +102,7 @@ class  ZalozenieSroFormular extends Component{
 				? <OrangeButton action={this.prevStep} text="Spať"/> 
 				:null
 			}
-			<OrangeButton disabled action={this.nextStep} text="Pokračovať"/></div>
+			<OrangeButton Disabled={} action={this.nextStep} text="Pokračovať"/></div>
 			</div>);
 	}
 }
