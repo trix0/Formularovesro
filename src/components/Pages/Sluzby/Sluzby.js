@@ -9,7 +9,7 @@ return(
 	<ReactAux>
 		<section className={"container"}>
 			<HeadingHero Heading="Ďalšie služby, ktoré poskytujeme"/>
-			<p></p>
+			<p>Naše služby zahŕňajú aj pomoc aktívnym firmám pri ich rôznych situáciách v podnikaní. Pamätajte, že úspech je odmena za drinu (Sofokles). Drinu však nechajte na nás.</p>
 			<Sluzba Name="1. Ohlásenie živnosti" Content="Rýchle a jednoduché ohlásenie neobmedzeného množstva voľných živností za jednotnú
 cenu. Za každú viazanú živnosť +7,50,- EUR." Price="25"/>
 			<Sluzba Name="2. Zmeny živnosti" Content="Zmenu miesta podnikania, obchodného mena je nevyhnutné ohlásiť príslušným úradom.

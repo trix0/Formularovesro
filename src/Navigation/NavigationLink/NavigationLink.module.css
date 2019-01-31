@@ -1,13 +1,22 @@
 .NavLink{
 	display: flex;
-	align-items: flex-end;
+    align-items: center;
+    height: 100%;
+
+}
+NavLink{
+	display: flex;
+	height: 75px;
+    align-items: center;	
+}
+.NavLink .active{
+border-bottom: 3px solid #D9754E;	
 }
 .NavLink svg{
 	width: 15px;
 	height: 15px;
 	fill:white;
 	margin-left: 5px;
-	margin-bottom: 10px;
 }
 
 
@@ -15,7 +24,10 @@
 }
 
 .navigationLink{
+	height: 100% !important;
 	color:#999;
+	align-items: center;
+    display: flex !important;
 }
 
 .navigationLink:hover{

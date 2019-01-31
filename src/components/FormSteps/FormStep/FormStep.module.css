@@ -1,0 +1,58 @@
+.FormStep{
+	width: 100%;
+	display: flex;
+	align-items:center;
+	justify-content: center;
+	height: 35px;
+
+}
+
+.FormStepNumber{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 30px;
+	height: 30px;
+	border:1px solid #D9754E;
+	border-radius: 50%;
+	margin:0px 10px ;
+}
+.FormStepName{
+	border:none;
+	font-size: 0.7rem;
+	display: none;
+	justify-content: center;
+	align-items: center;
+}
+.Active{
+	border:1px solid white;
+	background-color: #D9754E;
+	color:white;
+}
+.ActiveStep{
+	background-color: #D9754E;
+    color: white;
+}
+.ButtonOn{
+	cursor: pointer;
+}
+
+
+@media (min-width: 576px) { 
+
+}
+
+/*// Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+
+}
+
+/*// Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) { 
+	.FormStepName{
+		display: flex;
+	 }
+}
+
+/*// Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {  }

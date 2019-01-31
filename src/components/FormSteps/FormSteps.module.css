@@ -1,0 +1,18 @@
+.FormSteps{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	border: 2px solid #D9754E;
+	border-top: 0px;
+	padding: 0px !important;
+	border-radius: 5px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+}
+
+.FormSteps div{
+	border-right:1px solid #CDD6D5;
+}
+.FormSteps div:last-child {
+  border: none;
+}

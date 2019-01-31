@@ -4,6 +4,7 @@ import ReactAux from "../hoc/ReactAux";
 import NavigationLink from "./NavigationLink/NavigationLink";
 import Logo from "../components/Logo/Logo";
 import {Link} from 'react-router-dom';
+import { NavLink } from 'react-router-dom'
 import BurgerMenu from "./BurgerMenu/BurgerMenu"
 class Navigation extends Component {
 		state={
@@ -78,6 +79,7 @@ this.setState(prevState => ({
 }
 
  render(){
+ 	console.log(NavLink.location)
  	let navigation=[...this.state.navigation];
  	navigation=Object.keys(navigation).map((objectKey,index)=>{
  		let currentObject=navigation[objectKey];
@@ -101,7 +103,7 @@ this.setState(prevState => ({
 
 
  		return(
- 		<div onMouseOver={()=>this.subMenuHandlerOpen(index)} onMouseLeave={()=>this.subMenuHandlerClose(index)}  key={index} className={this.state.burgerMenuStatus?"displayBlock position-relative":"  position-relative  "+[classes.dropDown,classes.ActiveNav].join(" ")}>
+ 		<div onMouseOver={()=>this.subMenuHandlerOpen(index)} onMouseLeave={()=>this.subMenuHandlerClose(index)}  key={index} className={this.state.burgerMenuStatus?"displayBlock position-relative":"  position-relative  "+[classes.dropDown].join(" ")}>
 	 		 <NavigationLink  subMenuIndicator={currentObject.subMenuItems.length>0?true:false}  linkIndex={index} href={currentObject.href}>
 	 		 	{currentObject.listName}
 	 		 </NavigationLink>
