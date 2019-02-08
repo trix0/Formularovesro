@@ -25,7 +25,7 @@ const formSteps= (props) => {
 			stepName:"Platba"
 		}
 	];
-	steps=steps.map((step)=><FormStep button={step.stepNumber<=props.stepAccessMax} Active={step.stepNumber==props.step} key={step.stepNumber} pickStep={props.pickStep} stepNumber={step.stepNumber} stepName={step.stepName}/>)
+	steps=steps.map((step)=><FormStep button={step.stepNumber<=props.stepAccessMax} Active={step.stepNumber===props.step} key={step.stepNumber} pickStep={props.pickStep} stepNumber={step.stepNumber} stepName={step.stepName}/>)
 		return(
 			<section className={"container "+classes.FormSteps}>
 			{steps}

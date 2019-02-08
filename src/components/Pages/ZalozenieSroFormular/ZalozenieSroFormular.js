@@ -49,7 +49,7 @@ class  ZalozenieSroFormular extends Component{
 
   nextStep = () => {
     const { step,stepAccessMax,numberOfSteps} = this.state;
-    if(step+1>stepAccessMax||step==numberOfSteps){
+    if(step+1>stepAccessMax||step===numberOfSteps){
     	return;
     }
     this.setState({
@@ -66,7 +66,7 @@ class  ZalozenieSroFormular extends Component{
   };
 
   pickStep=(pickedStep)=>{
-  	const {step,stepAccessMax}= this.state;
+  	const {stepAccessMax}= this.state;
   	if(pickedStep>stepAccessMax){
   		return;
   	}
@@ -97,12 +97,12 @@ class  ZalozenieSroFormular extends Component{
 			<div className="container">
 			<FormSteps step={this.state.step} stepAccessMax={this.state.stepAccessMax} pickStep={this.pickStep}/>
 			{this.renderForm()}
-			<div className={this.state.step==1?classes.ControlsStart:classes.Controls}>
+			<div className={this.state.step===1?classes.ControlsStart:classes.Controls}>
 			{(this.state.step>1) 
 				? <OrangeButton action={this.prevStep} text="Spať"/> 
 				:null
 			}
-			<OrangeButton Disabled={} action={this.nextStep} text="Pokračovať"/></div>
+			<OrangeButton action={this.nextStep} text="Pokračovať"/></div>
 			</div>);
 	}
 }

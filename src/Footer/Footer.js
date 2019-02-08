@@ -31,8 +31,8 @@ const footer= (props) => (
 	    <li>office@formularovesro.sk</li>
 	    <li>+421 94815447 </li>
 	    <li >
-	      <a className="mx-1" target="_blank" href="https://www.facebook.com"><FontAwesomeIcon size="3x" icon={['fab', 'facebook']} /></a>
-	      <a className="mx-1" target="_blank" href="https://www.linkedin.com"><FontAwesomeIcon size="3x" icon={['fab', 'linkedin', ]} /></a>
+	      <a rel="noopener noreferrer" className="mx-1" target="_blank" href="https://www.facebook.com"><FontAwesomeIcon size="3x" icon={['fab', 'facebook']} /></a>
+	      <a rel="noopener noreferrer" className="mx-1" target="_blank" href="https://www.linkedin.com"><FontAwesomeIcon size="3x" icon={['fab', 'linkedin', ]} /></a>
 	    </li>
 	  </ul>
 	</div>

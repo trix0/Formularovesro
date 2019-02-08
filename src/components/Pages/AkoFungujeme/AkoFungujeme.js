@@ -1,5 +1,4 @@
 import React from 'react';
-import classes from "./AkoFungujeme.module.css"
 import ReactAux from "../../../hoc/ReactAux"
 import HeadingHero from "../../HeadingHero/HeadingHero"
 import Steps from "../../Steps/Steps"
