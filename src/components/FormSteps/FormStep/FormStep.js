@@ -2,7 +2,7 @@ import React from 'react';
 import classes from "./FormStep.module.css"
 
 const formStep= (props) => {
-	let activeClassNumber=[classes.FormStepNumber];
+	let activeClassNumber=props.button?[classes.FormStepNumber]:[classes.FormStepNumberNotActive];
 	let activeClassStep=[classes.FormStep];
 	if(props.Active){
 		activeClassNumber.push(classes.Active);

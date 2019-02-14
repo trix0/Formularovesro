@@ -2,12 +2,13 @@ import React,{Component} from "react"
 import classes from "./ZalozenieSroFormular.module.css";
 import FormSteps from "../../FormSteps/FormSteps";
 import OrangeButton from "../../UI/OrangeButton/OrangeButton";
+import FormularStepOne from "./FormularStepOne/FormularStepOne"
 class  ZalozenieSroFormular extends Component{
  state = {
     step: 1,
     numberOfSteps:5,
-    stepAccessMax:2,
-    formIsValid: false,
+    stepAccessMax:1,
+    formIsValid: true,
     price:0,
     loading: false,
     obchodneMeno:"",
@@ -49,11 +50,15 @@ class  ZalozenieSroFormular extends Component{
 
   nextStep = () => {
     const { step,stepAccessMax,numberOfSteps} = this.state;
-    if(step+1>stepAccessMax||step===numberOfSteps){
+    if(step===numberOfSteps){
     	return;
     }
+    else if(!this.state.formIsValid){
+      return;
+    }
     this.setState({
-      step: step + 1
+      step: step + 1,
+      stepAccessMax:stepAccessMax+1
     });
   };
 
@@ -79,7 +84,7 @@ class  ZalozenieSroFormular extends Component{
  renderForm() {
   switch(this.state.step) {
     case 1:
-    	return 1;
+    	return <FormularStepOne/>
     case 2:
     	return 2;
     case 3:
