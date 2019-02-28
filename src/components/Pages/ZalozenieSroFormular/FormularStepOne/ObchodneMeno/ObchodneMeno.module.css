@@ -1,0 +1,59 @@
+.obchodneMeno{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.inputs{
+display: flex;
+align-items: center;
+}
+
+.inputs input{
+
+margin: 0px 10px;
+width:200px;
+height: 35px;
+color:grey;
+padding: 15px;
+background-color: #EEF4F2;
+}
+.inputs select{
+	color:grey;
+	background-color: #EEF4F2;
+	border:none;
+	height: 35px;
+}
+.itemContainer{
+	display: flex;
+	flex-direction: column;
+}
+.error{
+	display: flex;
+	justify-content: flex-start;
+}
+
+@media (min-width: 576px) { 
+/*// small devices (tablets, 768px and up)*/
+.inputs input{
+margin: 0px 10px;
+width: 300px;
+height: 35px;
+color:grey;
+padding: 15px;
+background-color: #EEF4F2;
+}
+.itemContainer{
+	flex-direction: row;
+}
+}
+
+/*// Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+
+}
+
+/*// Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {  }
+
+/*// Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {  }

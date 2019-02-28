@@ -6,13 +6,11 @@ import Sidlo from "./Sidlo/Sidlo.js";
 const formularStepOne= (props) => {
 	return(
 		<div className={classes.formularStepOne}>
+			<h1 className={classes.formularHeading}>Zvoľte si obchodné meno vašej novej firmy</h1>
 			<div className={classes.FormularItems}>
 			<ObchodneMeno/>
 			<Email/>
 			<Sidlo/>
-			</div>
-			<div className={classes.Price}>
-				
 			</div>
 		</div>
 		);	
