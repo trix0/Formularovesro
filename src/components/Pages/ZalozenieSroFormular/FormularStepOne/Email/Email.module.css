@@ -1,0 +1,56 @@
+.InputContainer{
+	display: flex;
+	flex-direction: column;
+}
+.FirstEmail{
+	display: flex;
+}
+.SecondEmail{
+	display: flex;
+}
+.ValidationIcon{
+	display: flex;
+	margin:10px;
+	align-items: center;
+}
+.Email{
+margin-left: 20px;
+
+margin-top: 50px;
+}
+.Email input{
+	height: 35px;
+	text-align: center;
+	padding: 10px;
+}
+@media (min-width: 576px) { 
+/*// small devices (tablets, 768px and up)*/
+.Email{
+	margin-left: 50px;
+	margin-top: 50px;
+}
+}
+
+/*// Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+.Email{
+	margin-left: 50px;
+	margin-top: 50px;
+}
+}
+
+/*// Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) { 
+.Email{
+	margin-left: 150px;
+	margin-top: 50px;
+}
+ }
+
+/*// Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) { 
+.Email{
+	margin-left: 200px;
+	margin-top: 50px;
+}
+ }

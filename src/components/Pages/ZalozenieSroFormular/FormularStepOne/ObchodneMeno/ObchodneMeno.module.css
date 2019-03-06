@@ -5,12 +5,10 @@
 }
 .inputs{
 display: flex;
-align-items: center;
+flex-direction: column;
 }
 
 .inputs input{
-
-margin: 0px 10px;
 width:200px;
 height: 35px;
 color:grey;
@@ -18,6 +16,7 @@ padding: 15px;
 background-color: #EEF4F2;
 }
 .inputs select{
+	//width:200px;
 	color:grey;
 	background-color: #EEF4F2;
 	border:none;
@@ -25,13 +24,15 @@ background-color: #EEF4F2;
 }
 .itemContainer{
 	display: flex;
-	flex-direction: column;
 }
 .error{
 	display: flex;
 	justify-content: flex-start;
+	color:red;
 }
-
+.InputsContainer{
+margin-left:10px;
+}
 @media (min-width: 576px) { 
 /*// small devices (tablets, 768px and up)*/
 .inputs input{
@@ -42,8 +43,19 @@ color:grey;
 padding: 15px;
 background-color: #EEF4F2;
 }
+.InputsContainer{
+margin-left:0px;
+}
 .itemContainer{
 	flex-direction: row;
+}
+.InputsContainer{
+	display: flex;
+
+}
+.inputs{
+display: flex;
+flex-direction: row;
 }
 }
 

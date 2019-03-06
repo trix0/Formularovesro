@@ -54,7 +54,7 @@ class Navigation extends Component {
 		}
 		],
 		displayDropDown:false,
-		dropDownToShow:null,
+		dropDownToShow:2,
 		burgerMenuStatus:false
 	}
 burgerMenuHandler=()=>{
