@@ -1,7 +1,8 @@
 .obchodneMeno{
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	margin-left: 20px;
+	margin-top: 50px;
 }
 .inputs{
 display: flex;
@@ -15,8 +16,11 @@ color:grey;
 padding: 15px;
 background-color: #EEF4F2;
 }
+.ValidationIcon{
+	margin:0 10px;
+}
 .inputs select{
-	//width:200px;
+	width: 200px;
 	color:grey;
 	background-color: #EEF4F2;
 	border:none;
@@ -31,20 +35,32 @@ background-color: #EEF4F2;
 	color:red;
 }
 .InputsContainer{
-margin-left:10px;
+display: flex;
+flex-direction: column;
+}
+.InputsInnerContainer{
+	display: flex;
+	flex-direction: column;
 }
 @media (min-width: 576px) { 
 /*// small devices (tablets, 768px and up)*/
 .inputs input{
 margin: 0px 10px;
+margin-left: 0px;
 width: 300px;
 height: 35px;
 color:grey;
 padding: 15px;
 background-color: #EEF4F2;
 }
+.inputs select{
+	width: auto;
+}
 .InputsContainer{
 margin-left:0px;
+}
+.InputsInnerContainer{
+	flex-direction: row;
 }
 .itemContainer{
 	flex-direction: row;
@@ -57,15 +73,33 @@ margin-left:0px;
 display: flex;
 flex-direction: row;
 }
+
+.obchodneMeno{
+	margin-left: 50px;
+	margin-top: 50px;
+}
 }
 
 /*// Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
-
+.obchodneMeno{
+	margin-left: 50px;
+	margin-top: 50px;
+}
 }
 
 /*// Large devices (desktops, 992px and up)*/
-@media (min-width: 992px) {  }
+@media (min-width: 992px) {
+.obchodneMeno{
+	margin-left: 150px;
+	margin-top: 50px;
+}
+  }
 
 /*// Extra large devices (large desktops, 1200px and up)*/
-@media (min-width: 1200px) {  }
+@media (min-width: 1200px) { 
+.obchodneMeno{
+	margin-left: 200px;
+	margin-top: 50px;
+}
+ }
