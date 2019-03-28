@@ -1,0 +1,26 @@
+Sluzby
+Pridat kontaktný formulár
+
+formular 1
+Obchodné meno
+Oznacenie spolocnosti
+Email
+
+formular 2
+Výška - menej ako 5000 nemôže byt
+Rozsah splatenie- viac ako 30% výška
+
+konecnýám uzivatelom spravit modal formular
+
+spôsob konania: Ak má spolocnost jedného konatela, koná tento v mene spolocnosti samostatne. Ak je konatelov viac, sú oprávnení konat v mene spolocnosti každý z nich samostatne. 
+
+Formular 3
+Môžu napísat aj vlastný nazov podnikania
+
+
+Formular 4
+Ziadam o registraciu: nedavat tam
+
+Fakturacne udaje: budu sa zasielat iba mailom
+
+telefon nieje povinny		

@@ -1,20 +1,40 @@
 .Modal {
-    position: fixed;
-    z-index: 500;
+    z-index: 1200;
     background-color: white;
-    width: 70%;
+    width: 100%;
     border: 1px solid #ccc;
-    box-shadow: 1px 1px 1px black;
+    border-radius: 6px;
     padding: 16px;
-    left: 15%;
-    top: 30%;
     box-sizing: border-box;
-    transition: all 0.3s ease-out;
+
+    top:250px;
+}
+.ModalContainer{
+    position: absolute;
+    left:0;
+    top:150px;
+    margin-bottom: 200px;
+    right: 0;
+    display: flex;
+    justify-content: center;
 }
 
-@media (min-width: 600px) {
-    .Modal {
-        width: 500px;
-        left: calc(50% - 250px);
-    }
+@media (min-width: 576px) { 
+/*// small devices (tablets, 768px and up)*/
+}
+
+/*// Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+ 
+}
+
+/*// Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {  }
+
+/*// Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) { 
+.Modal{
+margin: 0 auto;
+max-width: 1200px;
+ }
 }

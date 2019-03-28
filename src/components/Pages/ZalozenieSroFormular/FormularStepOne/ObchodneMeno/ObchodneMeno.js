@@ -14,9 +14,7 @@ const obchodneMeno= (props) => {
 			<div>
 				<h5>Obchodné meno</h5>
 				<div className={classes.itemContainer}>
-					<div className={classes.ValidationIcon}>
-						{touched?valid?<i><FontAwesomeIcon color="#18C915" size="2x" icon="check-circle" /></i>:<i><FontAwesomeIcon color="red" size="2x" icon="times-circle" /></i>:null}
-					</div>	
+				<div className={classes.ValidationIcon}>{touched?valid?<i><FontAwesomeIcon color="#18C915" size="2x" icon="check-circle" /></i>:<i><FontAwesomeIcon color="red" size="2x" icon="times-circle" /></i>:<i className={classes.ValidationIconHidden}><FontAwesomeIcon color="red" size="2x" icon="times-circle" /></i>}</div>
 					<div className={classes.InputsContainer}>
 						<div className={classes.InputsInnerContainer}>
 							<div className={classes.inputs}>

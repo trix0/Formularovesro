@@ -4,7 +4,6 @@ import ReactAux from "../hoc/ReactAux";
 import NavigationLink from "./NavigationLink/NavigationLink";
 import Logo from "../components/Logo/Logo";
 import {Link} from 'react-router-dom';
-import { NavLink } from 'react-router-dom'
 import BurgerMenu from "./BurgerMenu/BurgerMenu"
 class Navigation extends Component {
 		state={
@@ -79,7 +78,6 @@ this.setState(prevState => ({
 }
 
  render(){
- 	console.log(NavLink.location)
  	let navigation=[...this.state.navigation];
  	navigation=Object.keys(navigation).map((objectKey,index)=>{
  		let currentObject=navigation[objectKey];

@@ -17,6 +17,10 @@ margin:0px;
 	margin:10px;
 	align-items: center;
 }
+.ValidationIconHidden{
+
+	visibility: hidden;
+}
 .Email{
 margin-left: 20px;
 

@@ -1,0 +1,82 @@
+.Sidlo{
+	display: flex;
+	flex-direction: column;
+	margin-left: 20px;
+	margin-top: 50px;
+}
+.Sidlo input{
+	height: 35px;
+	text-align: center;
+	padding: 10px;
+}
+.Sidlo select{
+		width: 200px;
+	color:grey;
+	background-color: #EEF4F2;
+	border:none;
+	height: 35px;
+}
+.Sidlo label{
+font-weight: 500;
+margin:0px;
+}
+.ValidationIcon{
+	display: flex;
+	margin:10px;
+	align-items: center;
+}
+.ValidationIconHidden{
+
+	visibility: hidden;
+}
+.InfoText{
+	font-size: 1rem;
+	margin-bottom:25px;
+	color:#7A9AA5;
+}
+.InputContainer{
+	display: flex;
+	flex-direction: column;
+}
+.InputWrapper{
+	display: flex;
+	align-items: center;
+}
+.error{
+	display: flex;
+	justify-content: flex-start;
+	color:red;
+}
+
+@media (min-width: 576px) { 
+/*// small devices (tablets, 768px and up)*/
+
+.Sidlo{
+	margin-left: 50px;
+	margin-top: 50px;
+}
+}
+
+/*// Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+.Sidlo{
+	margin-left: 50px;
+	margin-top: 50px;
+}
+}
+
+/*// Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+.Sidlo{
+	margin-left: 150px;
+	margin-top: 50px;
+}
+  }
+
+/*// Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) { 
+.Sidlo{
+	margin-left: 200px;
+	margin-top: 50px;
+}
+ }

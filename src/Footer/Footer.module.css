@@ -1,3 +1,7 @@
+.Footer div{
+	position:static; 
+}
+
 .Footer a{
 	color:white;
 }

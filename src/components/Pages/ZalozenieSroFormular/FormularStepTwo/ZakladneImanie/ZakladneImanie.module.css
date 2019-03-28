@@ -1,4 +1,4 @@
-.obchodneMeno{
+.ZakladneImanie{
 	display: flex;
 	flex-direction: column;
 	margin-left: 20px;
@@ -8,8 +8,15 @@
 display: flex;
 flex-direction: column;
 }
-
-.inputs input{
+.GroupItem{
+display: flex;
+flex-direction: column;
+}
+.InputContainer label{
+font-weight: 500;
+margin:0px;
+}
+.ZakladneImanie input{
 width:200px;
 height: 35px;
 color:grey;
@@ -17,7 +24,9 @@ padding: 15px;
 background-color: #EEF4F2;
 }
 .ValidationIcon{
-	margin:0 10px;
+	display: flex;
+	margin:10px;
+	align-items: center;
 }
 .ValidationIconHidden{
 
@@ -38,7 +47,7 @@ background-color: #EEF4F2;
 	justify-content: flex-start;
 	color:red;
 }
-.InputsContainer{
+.InputContainer{
 display: flex;
 flex-direction: column;
 }
@@ -48,6 +57,9 @@ flex-direction: column;
 }
 @media (min-width: 576px) { 
 /*// small devices (tablets, 768px and up)*/
+.GroupItem{
+flex-direction: row;
+}
 .inputs input{
 margin: 0px 10px;
 margin-left: 0px;
@@ -78,7 +90,7 @@ display: flex;
 flex-direction: row;
 }
 
-.obchodneMeno{
+.ZakladneImanie{
 	margin-left: 50px;
 	margin-top: 50px;
 }
@@ -86,7 +98,7 @@ flex-direction: row;
 
 /*// Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
-.obchodneMeno{
+.ZakladneImanie{
 	margin-left: 50px;
 	margin-top: 50px;
 }
@@ -94,7 +106,7 @@ flex-direction: row;
 
 /*// Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) {
-.obchodneMeno{
+.ZakladneImanie{
 	margin-left: 150px;
 	margin-top: 50px;
 }
@@ -102,7 +114,7 @@ flex-direction: row;
 
 /*// Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) { 
-.obchodneMeno{
+.ZakladneImanie{
 	margin-left: 200px;
 	margin-top: 50px;
 }

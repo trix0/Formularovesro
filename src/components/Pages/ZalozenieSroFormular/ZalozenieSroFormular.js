@@ -3,11 +3,15 @@ import classes from "./ZalozenieSroFormular.module.css";
 import FormSteps from "../../FormSteps/FormSteps";
 import OrangeButton from "../../UI/OrangeButton/OrangeButton";
 import FormularStepOne from "./FormularStepOne/FormularStepOne"
+import FormularStepTwo from "./FormularStepTwo/FormularStepTwo"
 class  ZalozenieSroFormular extends Component{
  state = {
+    modals:{
+      vlozitZakladatelaModal:false
+    },
     step: 1,
     numberOfSteps:5,
-    stepAccessMax:1,
+    stepAccessMax:3,
     formIsValid: true,
     price:0,
     loading: false,
@@ -47,46 +51,80 @@ class  ZalozenieSroFormular extends Component{
         stat:""
     }
 };
+  componentWillMount() {
+    let {stepAccessMax}=this.state
+    let krok=parseInt(this.props.match.params.krok)
+    if(krok>stepAccessMax){
+      krok=stepAccessMax
+      this.props.history.push('/zalozenie-sro-formular/'+krok);
+    }
+    this.setState({
+      step: krok
+    });
+  }
+
 
   nextStep = () => {
-    const { step,stepAccessMax,numberOfSteps} = this.state;
+    let { step,stepAccessMax,numberOfSteps} = this.state;
     if(step===numberOfSteps){
     	return;
     }
     else if(!this.state.formIsValid){
       return;
     }
+    step=step+1
+    this.props.history.push('/zalozenie-sro-formular/'+step);
     this.setState({
-      step: step + 1,
+      step: step,
       stepAccessMax:stepAccessMax+1
     });
   };
 
   // Go back to prev step
   prevStep = () => {
-    const { step } = this.state;
+
+    let { step } = this.state;
+   step=step-1
+    this.props.history.push('/zalozenie-sro-formular/'+step);
     this.setState({
-      step: step - 1
+      step: step
     });
   };
 
   pickStep=(pickedStep)=>{
   	const {stepAccessMax}= this.state;
+
   	if(pickedStep>stepAccessMax){
   		return;
   	}
-
+    this.props.history.push('/zalozenie-sro-formular/'+pickedStep);
   	this.setState({
   		step:pickedStep
   	});
 
   }
+  vlozitZakladatelaHandler=()=>{
+    console.log("Clicked");
+    let newValue={vlozitZakladatelaModal:true}
+    this.setState({
+      modals:newValue
+    })
+  };
+
+  closeModals=()=>{
+    let newValue={vlozitZakladatelaModal:false}
+    this.setState({
+      modals:newValue
+    })
+  };
+
+
  renderForm() {
   switch(this.state.step) {
     case 1:
     	return <FormularStepOne/>
     case 2:
-    	return 2;
+    	return <FormularStepTwo closeModals={this.closeModals} vlozitZakladatelaHandler={this.vlozitZakladatelaHandler} state={this.state}/>
     case 3:
     	return 3;
     case 4:
@@ -98,6 +136,7 @@ class  ZalozenieSroFormular extends Component{
   }
 }
 	render(){
+
 		return(
 			<div className="container">
 			<FormSteps step={this.state.step} stepAccessMax={this.state.stepAccessMax} pickStep={this.pickStep}/>

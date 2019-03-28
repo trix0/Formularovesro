@@ -4,14 +4,16 @@
 	-webkit-border-radius:6px;
 	border-radius:6px;
 	border:none;
-	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
-	font-size:20px;
+	font-size:15px;
 	padding:15px;
 	text-decoration:none;
 	text-align: center;
 	min-width: 200px;
+	 display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .Button:hover {
 	background-color:#a34724;
@@ -21,6 +23,9 @@
 .Button:active {
 	position:relative;
 	top:1px;
+}
+.Button .Icon{
+	padding:0px 5px;
 }
 .Left{
 	padding:0px;

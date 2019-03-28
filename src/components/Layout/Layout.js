@@ -8,9 +8,9 @@ import './product.css';
 import { library } from '@fortawesome/fontawesome-svg-core'
 
 import { fab} from '@fortawesome/free-brands-svg-icons'
-import { faCheckCircle,faTimesCircle } from '@fortawesome/free-solid-svg-icons'
+import { faCheckCircle,faTimesCircle,faPlus} from '@fortawesome/free-solid-svg-icons'
 
-library.add(fab,faCheckCircle, faTimesCircle)
+library.add(fab,faCheckCircle,faTimesCircle,faPlus)
 
 
 class  Layout extends Component{

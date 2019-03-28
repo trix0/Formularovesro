@@ -16,7 +16,7 @@ class App extends Component {
         	<Route path="/o-nas" exact component={Onas}/>
         	<Route path="/sluzby" exact component={Sluzby}/>
           <Route path="/ako-fungujeme" exact component={AkoFungujeme}/>
-        	<Route path="/zalozenie-sro-formular" exact component={ZalozenieSroFormular}/>
+        	<Route path="/zalozenie-sro-formular/:krok" component={ZalozenieSroFormular}/>
         </Layout>
       </div>
     );
