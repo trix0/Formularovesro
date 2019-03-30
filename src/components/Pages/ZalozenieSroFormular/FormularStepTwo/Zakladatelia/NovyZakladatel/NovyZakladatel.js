@@ -19,23 +19,14 @@ this.state={
 		obec:"",
 		psc:"",
 		stat:"",
-		datumNarodenia:{
-			den:"",
-			mesiac:"",
-			rok:""
-		},
-		rodneCislo:{
-			cislo:"",
-			koncovka:""
-		},
-		dokladTotoznosti:{
-			typ:"",
-			cisloDokladu:""
-		},
+		datumNarodenia:"",
+		rodneCislo:"",
+		dokladTotoznostiTyp:"",
+		dokladTotoznostiCislo:"",
 		vyskaVkladu:5000,
 		podielSpolocnosti:100,
 		rozsahSplatenia:5000,
-		spravcaVkladu:false,
+		spravcaVkladu:true,
 		budeKonatelom:true,
 		vypisRegistraTrestov:{
 			miestoNarodenia:"",
@@ -56,6 +47,7 @@ this.state={
 		}
 	},
 	pravnickaOsoba:{
+
 		ico:"",
 		obchodneMeno:"",
 		ulica:"",
@@ -67,15 +59,9 @@ this.state={
 		zastupenieOsobou:{
 			meno:"",
 			priezvisko:"",
-			datumNarodenia:{
-				den:"",
-				mesiac:"",
-				rok:""
-			},
-			rodneCislo:{
-				cislo:"",
-				koncovka:""
-			}		
+			pohlavie:"",
+			datumNarodenia:"",
+			rodneCislo:""		
 		},
 		vyskaVkladu:5000,
 		podielSpolocnosti:100,
@@ -95,12 +81,63 @@ handleInputChange(event) {
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
   	let newNameTarget=name.split("/");
-  	if(newNameTarget.length>1){
-  		let oldfyzickaOsoba={...this.state.fyzickaOsoba};
+
+  	if(newNameTarget.length==2){
+  		let oldfyzickaOsoba={...this.state};
   		console.log(oldfyzickaOsoba)
-  		oldfyzickaOsoba[newNameTarget[1]]=value;
+  		oldfyzickaOsoba[newNameTarget[0]][newNameTarget[1]]=value;
+  		//create rodne cislo from birthday
+
+  		if(newNameTarget[1]==="datumNarodenia"||newNameTarget[1]==="pohlavie"){
+  			let datumNarodenia=oldfyzickaOsoba[newNameTarget[0]].datumNarodenia.split("/");
+  			if(datumNarodenia.length>2){
+				let den=datumNarodenia[0]
+	  			let mesiac=datumNarodenia[1]
+	  			let rok=datumNarodenia[2]
+	  			let rocnik=rok[2]+rok[3]
+	  			if(oldfyzickaOsoba[newNameTarget[0]].pohlavie==="Žena"){
+	  			mesiac=parseInt(mesiac)+50	
+	  			}
+	  			oldfyzickaOsoba[newNameTarget[0]].rodneCislo=rocnik+""+mesiac+""+den;  				
+  			}
+  			
+  		}
   		this.setState({
-      		fyzickaOsoba: oldfyzickaOsoba
+      		...oldfyzickaOsoba
+    	});
+  	}
+  	else if(newNameTarget.length==3){
+  		console.log(newNameTarget)
+  		let oldfyzickaOsoba={...this.state};
+  		console.log(oldfyzickaOsoba)
+  		oldfyzickaOsoba[newNameTarget[0]][newNameTarget[1]][newNameTarget[2]]=value; 
+
+  		if(newNameTarget[2]==="datumNarodenia"||newNameTarget[2]==="pohlavie"){
+  			console.log("fired")
+  			let datumNarodenia=oldfyzickaOsoba[newNameTarget[0]][newNameTarget[1]].datumNarodenia.split("/");
+  			if(datumNarodenia.length>2){
+				let den=datumNarodenia[0]
+	  			let mesiac=datumNarodenia[1]
+	  			let rok=datumNarodenia[2]
+	  			let rocnik=rok[2]+rok[3]
+	  			if(oldfyzickaOsoba[newNameTarget[0]][newNameTarget[1]].pohlavie==="Žena"){
+	  			mesiac=parseInt(mesiac)+50	
+	  			}
+	  			oldfyzickaOsoba[newNameTarget[0]][newNameTarget[1]].rodneCislo=rocnik+""+mesiac+""+den;  				
+  			}
+  			
+  		} 		
+  		this.setState({
+      		...oldfyzickaOsoba
+    	});
+  	}
+  	else if(newNameTarget.length==4){
+  		console.log(newNameTarget)
+  		let oldfyzickaOsoba={...this.state};
+  		console.log(oldfyzickaOsoba)
+  		oldfyzickaOsoba[newNameTarget[0]][newNameTarget[1]][newNameTarget[2]][newNameTarget[3]]=value;  		
+  		this.setState({
+      		...oldfyzickaOsoba
     	});
   	}
   	else{
@@ -125,7 +162,7 @@ handleInputChangeMaster(event) {
 render(){
 let formular=(<FyzickaOsoba fyzickaOsoba={this.state.fyzickaOsoba} handleInputChange={this.handleInputChange}/>)
 if(this.state.typZakladatela==="pravnickaOsoba"){
-	formular=(<PravnickaOsoba handleInputChange={this.handleInputChange}/>)
+	formular=(<PravnickaOsoba pravnickaOsoba={this.state.pravnickaOsoba} handleInputChange={this.handleInputChange}/>)
 }
 
 let fyzickaOsoba={

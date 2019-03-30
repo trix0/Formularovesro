@@ -1,6 +1,12 @@
-.FyzickaOsoba{
-	margin-top: 50px;
+.Header{
+display: flex;
+font-size: 1.5rem;
+margin-bottom:50px;
+margin-top:50px;
+color:#7A9AA5;
+padding-left: 50px;
 }
+
 .InputContainer{
 	display: flex;
 	flex-direction: column;
@@ -16,7 +22,7 @@
 	margin-left: 51px;
 }
 
-.FyzickaOsoba select{
+.ZastupenieOsobouKonatel select{
 	text-align: center;
 	width: 200px;
 	color:grey;
@@ -26,7 +32,7 @@
 	height: 35px;
 }
 
-.FyzickaOsoba label{
+.ZastupenieOsobouKonatel label{
 color:#7A9AA5;
 font-size: 1rem;
 font-weight: 500;

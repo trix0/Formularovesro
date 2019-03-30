@@ -1,0 +1,52 @@
+.PravnickaOsoba{
+	margin-top: 50px;
+}
+.InputContainer{
+	display: flex;
+	flex-direction: column;
+}
+.InputWrapper{
+	display: flex;
+	margin:15px 0;
+	align-items: center;
+}
+.InputWrapperSelect{
+	display: flex;
+	align-items: center;
+	margin-left: 51px;
+}
+
+.PravnickaOsoba select{
+	text-align: center;
+	width: 200px;
+	color:grey;
+	background-color: #EEF4F2;
+	border:1px solid #7A9AA5;
+	border-radius: 6px;
+	height: 35px;
+}
+
+.PravnickaOsoba label{
+color:#7A9AA5;
+font-size: 1rem;
+font-weight: 500;
+margin:10px 0;
+
+}
+
+.ValidationIcon{
+	display: flex;
+	margin:10px;
+	padding-top: 20px;
+	align-items: center;
+}
+.ValidationIconHidden{
+
+	visibility: hidden;
+}
+
+.error{
+	display: flex;
+	justify-content: flex-start;
+	color:red;	
+}

@@ -1,0 +1,42 @@
+.checkBox{
+	margin-left: 50px;	
+}
+.Info{
+	padding-left:75px;
+	font-size: 0.8rem;	
+}
+.Disabled{
+	color:#d3d3d3 !important;
+}
+input[type=checkbox].cssCheckbox {
+
+	position:absolute; z-index:-1000; left:-1000px; overflow: hidden; clip: rect(0 0 0 0); height:1px; width:1px; margin:-1px; padding:0; border:0;
+}
+
+input[type=checkbox].cssCheckbox + label.cssLabel {
+	padding-left:75px;
+	height:auto;
+	display:inline-block;
+	line-height:33px;
+	background-repeat:no-repeat;
+	background-position: 0 0;
+	font-size: 1rem;
+	vertical-align:middle;
+	cursor:pointer;
+	color:#7A9AA5;
+
+}
+
+
+input[type=checkbox].cssCheckbox:checked + label.cssLabel {
+	background-position: 0 -33px;
+}
+label.cssLabel {
+	background-image:url("../../../assets/images/other/checkBox.png");
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
