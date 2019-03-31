@@ -5,7 +5,88 @@ import PravnickaOsoba from "./PravnickaOsoba/PravnickaOsoba"
 class NovyZakladatel extends React.Component {
 constructor(props) {
 super(props);
-this.state={
+if(this.props.upravitZakladatelaID!=undefined){
+	let upravitSpolocnika={...this.props.spolocnici[this.props.upravitZakladatelaID]}
+	this.state=upravitSpolocnika
+}
+else{
+
+	console.log("else")
+	this.state={
+	typZakladatela:"fyzickaOsoba",
+	fyzickaOsoba:{
+		pohlavie:"Muž",
+		titulPredMenom:"",
+		meno:"",
+		priezvisko:"",
+		titulZaMenom:"",
+		ulica:"",
+		supisneCislo:"",
+		orientacneCislo:"",
+		obec:"",
+		psc:"",
+		stat:"",
+		datumNarodenia:"",
+		rodneCislo:"",
+		dokladTotoznostiTyp:"",
+		dokladTotoznostiCislo:"",
+		vyskaVkladu:5000,
+		podielSpolocnosti:100,
+		rozsahSplatenia:5000,
+		spravcaVkladu:true,
+		budeKonatelom:true,
+		vypisRegistraTrestov:{
+			miestoNarodenia:"",
+			statnaPrislusnost:"",
+			rodnePriezvisko:"",
+			predchadzajucePriezvisko:"",
+			otec:{
+				meno:"",
+				priezvisko:""
+
+			},
+			matka:{
+				meno:"",
+				priezvisko:"",
+				rodnePriezvisko:""
+
+			}
+		}
+	},
+	pravnickaOsoba:{
+
+		ico:"",
+		obchodneMeno:"",
+		ulica:"",
+		supisneCislo:"",
+		orientacneCislo:"",
+		obec:"",
+		psc:"",
+		stat:"",
+		zastupenieOsobou:{
+			meno:"",
+			priezvisko:"",
+			pohlavie:"",
+			datumNarodenia:"",
+			rodneCislo:""		
+		},
+		vyskaVkladu:5000,
+		podielSpolocnosti:100,
+		rozsahSplatenia:5000,
+		spravcaVkladu:false
+
+		}
+
+
+}
+}
+
+this.handleInputChange = this.handleInputChange.bind(this);
+this.handleInputChangeMaster = this.handleInputChangeMaster.bind(this);
+}
+
+saveAndReset=()=>{
+	let initialState={
 	typZakladatela:"fyzickaOsoba",
 	fyzickaOsoba:{
 		pohlavie:"Muž",
@@ -70,11 +151,11 @@ this.state={
 
 		}
 }
-
-this.handleInputChange = this.handleInputChange.bind(this);
-this.handleInputChangeMaster = this.handleInputChangeMaster.bind(this);
+	this.props.ulozitZakladatela(this.state)
+	  		this.setState({
+      		...initialState
+    	});
 }
-
 
 handleInputChange(event) {
     const target = event.target;
@@ -82,7 +163,7 @@ handleInputChange(event) {
     const name = target.name;
   	let newNameTarget=name.split("/");
 
-  	if(newNameTarget.length==2){
+  	if(newNameTarget.length===2){
   		let oldfyzickaOsoba={...this.state};
   		console.log(oldfyzickaOsoba)
   		oldfyzickaOsoba[newNameTarget[0]][newNameTarget[1]]=value;
@@ -106,7 +187,7 @@ handleInputChange(event) {
       		...oldfyzickaOsoba
     	});
   	}
-  	else if(newNameTarget.length==3){
+  	else if(newNameTarget.length===3){
   		console.log(newNameTarget)
   		let oldfyzickaOsoba={...this.state};
   		console.log(oldfyzickaOsoba)
@@ -131,7 +212,7 @@ handleInputChange(event) {
       		...oldfyzickaOsoba
     	});
   	}
-  	else if(newNameTarget.length==4){
+  	else if(newNameTarget.length===4){
   		console.log(newNameTarget)
   		let oldfyzickaOsoba={...this.state};
   		console.log(oldfyzickaOsoba)
@@ -255,6 +336,11 @@ let pravnickaOsoba={
 			</div>
 			<div className={classes.Formular}>
 			{formular}
+			<div className={classes.Controls}>
+			<div className={classes.ControlsZrusit}><button>Zrušiť</button></div>
+			<div className={classes.ControlsUlozit}><button onClick={this.saveAndReset}>Uložiť</button></div>
+			</div>
+			 
 			</div>
 		</div>
 		);

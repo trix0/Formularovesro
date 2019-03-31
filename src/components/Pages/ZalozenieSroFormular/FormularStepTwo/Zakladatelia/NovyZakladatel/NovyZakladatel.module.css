@@ -8,8 +8,20 @@ font-size: 1.5rem;
 margin-bottom:50px;
 color:#7A9AA5;
 }
+.Controls{
+	display: flex;
+	justify-content: center;
+	margin-top: 50px;
 
-
+}
+.ControlsZrusit{
+	width: 40%;
+}
+.ControlsUlozit{
+	width: 40%;
+	display: flex;
+	justify-content: flex-end;
+}
 .InputContainer{
 	display: flex;
 	flex-direction: column;

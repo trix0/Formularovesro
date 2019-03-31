@@ -15,8 +15,8 @@ const zakladneImanie= (props) => {
 				<div className={classes.itemContainer}>
 					<div className={classes.ValidationIcon}>{touched?valid?<i><FontAwesomeIcon color="#18C915" size="2x" icon="check-circle" /></i>:<i><FontAwesomeIcon color="red" size="2x" icon="times-circle" /></i>:<i className={classes.ValidationIconHidden}><FontAwesomeIcon color="red" size="2x" icon="times-circle" /></i>}</div>
 					<div className={classes.InputContainer}>
-						<label htmlFor="vyskaImania">Výška ímania</label>
-						<input id="vyskaImania" type="email" name="vyskaImania" placeholder="5000€*" />
+						<label htmlFor="vyskaImania">Výška ímania(€)</label>
+						<input id="vyskaImania" type="email" name="vyskaImania" placeholder="5000" />
 						{valid?null:<div className={classes.error}>{errorMessage?errorMessage:defaultErorr}</div>}
 					</div>
 					
@@ -25,8 +25,8 @@ const zakladneImanie= (props) => {
 				<div className={classes.itemContainer}>
 					<div className={classes.ValidationIcon}>{touched?valid?<i><FontAwesomeIcon color="#18C915" size="2x" icon="check-circle" /></i>:<i><FontAwesomeIcon color="red" size="2x" icon="times-circle" /></i>:<i className={classes.ValidationIconHidden}><FontAwesomeIcon color="red" size="2x" icon="times-circle" /></i>}</div>
 					<div className={classes.InputContainer}>
-						<label htmlFor="rozsahSplatenia">Rozsah splatenia</label>
-						<input id="rozsahSplatenia" type="email" name="rozsahSplatenia" placeholder="5000€*" />
+						<label htmlFor="rozsahSplatenia">Rozsah splatenia(€)</label>
+						<input id="rozsahSplatenia" type="email" name="rozsahSplatenia" placeholder="5000" />
 						{valid?null:<div className={classes.error}>{errorMessage?errorMessage:defaultErorr}</div>}
 					</div>
 					

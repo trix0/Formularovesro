@@ -17,7 +17,7 @@ const fyzickaOsoba = (props) => {
 			<div className={classes.InputWrapperSelect}>
 				<div className={classes.InputContainer}>
 					<label htmlFor="fyzickaOsoba/pohlavie">Pohlavie*</label>
-					<select value={props.pohlavie} id="fyzickaOsoba/pohlavie" name="fyzickaOsoba/pohlavie" onChange={props.handleInputChange}>
+					<select value={props.fyzickaOsoba.pohlavie} id="fyzickaOsoba/pohlavie" name="fyzickaOsoba/pohlavie" onChange={props.handleInputChange}>
 		  				<option value="Muž">Muž</option>				
 		  				<option value="Žena">Žena</option>				
 					</select>

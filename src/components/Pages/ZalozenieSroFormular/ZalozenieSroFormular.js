@@ -6,8 +6,12 @@ import FormularStepOne from "./FormularStepOne/FormularStepOne"
 import FormularStepTwo from "./FormularStepTwo/FormularStepTwo"
 class  ZalozenieSroFormular extends Component{
  state = {
+    sideInfo:{
+      upravitZakladatelaID:null
+    },
     modals:{
-      vlozitZakladatelaModal:false
+      vlozitZakladatelaModal:false,
+      upravitZakladatelaModal:false
     },
     step: 1,
     numberOfSteps:5,
@@ -35,6 +39,7 @@ class  ZalozenieSroFormular extends Component{
         rozsahSplatenia:5000,
     },
     spolocnici:[],
+    konatelia:[],
     uzivateliaVyhod:{},
     sposobKonania:"",
     predmetPodnikania:[],
@@ -51,7 +56,9 @@ class  ZalozenieSroFormular extends Component{
         stat:""
     }
 };
+
   componentWillMount() {
+
     let {stepAccessMax}=this.state
     let krok=parseInt(this.props.match.params.krok)
     if(krok>stepAccessMax){
@@ -104,11 +111,33 @@ class  ZalozenieSroFormular extends Component{
 
   }
   vlozitZakladatelaHandler=()=>{
-    console.log("Clicked");
     let newValue={vlozitZakladatelaModal:true}
     this.setState({
       modals:newValue
     })
+  };
+
+  upravitZakladatelaModal=(index)=>{
+    console.log(index)
+    let newValue={upravitZakladatelaModal:true}
+    let newValue2={upravitZakladatelaID:index}
+    this.setState({
+      modals:newValue
+    })
+    this.setState({
+      sideInfo:newValue2
+    })
+  };
+
+
+  ulozitZakladatela=(zakladatel)=>{
+    let oldSpolocnici=[...this.state.spolocnici];
+    console.log(zakladatel)
+    oldSpolocnici.push(zakladatel)
+    this.setState({
+      spolocnici:oldSpolocnici
+    })
+    this.closeModals()
   };
 
   closeModals=()=>{
@@ -120,11 +149,12 @@ class  ZalozenieSroFormular extends Component{
 
 
  renderForm() {
+
   switch(this.state.step) {
     case 1:
     	return <FormularStepOne/>
     case 2:
-    	return <FormularStepTwo closeModals={this.closeModals} vlozitZakladatelaHandler={this.vlozitZakladatelaHandler} state={this.state}/>
+    	return <FormularStepTwo upravitZakladatelaModal={this.upravitZakladatelaModal} ulozitZakladatela={this.ulozitZakladatela} closeModals={this.closeModals} vlozitZakladatelaHandler={this.vlozitZakladatelaHandler} state={this.state}/>
     case 3:
     	return 3;
     case 4:
