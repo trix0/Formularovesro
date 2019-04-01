@@ -16,8 +16,7 @@ const email= (props) => {
 				<div className={classes.InputContainer}>
 					<label htmlFor="email">Email</label>
 					<input onChange={props.handleInputChange}  id="email" type="email" name="email" placeholder="Zadajte váš email*" />
-					{props.state.validation.email.valid||!props.state.validation.email.touched?null:<div className={classes.error}>{props.state.validation.email.error?props.state.validation.email.error:defaultErorr}</div>}
-				</div>
+						<div className={props.state.validation.email.valid||!props.state.validation.email.touched?classes.errorHidden:classes.error}>{props.state.validation.email.error?props.state.validation.email.error:defaultErorr}</div>				</div>
 				
 			</div>
 			<div className={classes.SecondEmail}>
@@ -25,7 +24,7 @@ const email= (props) => {
 					<div className={classes.InputContainer}>
 					<label htmlFor="emailRepeat">Zopakujte email</label>			
 					<input onChange={props.handleInputChange} id="emailRepeat" type="email" name="emailRepeat" placeholder="Zopakujte váš email*" />
-					{props.state.validation.emailRepeat.valid||!props.state.validation.emailRepeat.touched?null:<div className={classes.error}>{props.state.validation.emailRepeat.error?props.state.validation.emailRepeat.error:defaultErorr}</div>}
+					<div className={props.state.validation.emailRepeat.valid||!props.state.validation.emailRepeat.touched?classes.errorHidden:classes.error}>{props.state.validation.emailRepeat.error?props.state.validation.emailRepeat.error:defaultErorr}</div>
 				</div>
 			</div>
 		</div>
