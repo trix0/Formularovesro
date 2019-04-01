@@ -23,4 +23,22 @@ Ziadam o registraciu: nedavat tam
 
 Fakturacne udaje: budu sa zasielat iba mailom
 
-telefon nieje povinny		
+telefon nieje povinny	
+
+
+
+
+
+
+obchodneMeno
+email
+emailRepeat
+telefon
+cislo
+ico 47250585
+dic 2022925014
+
+icDPH SK2024126489 
+
+zakladne imanie min 5000
+Rozsah splatenie more than 30% zakladne imanie	

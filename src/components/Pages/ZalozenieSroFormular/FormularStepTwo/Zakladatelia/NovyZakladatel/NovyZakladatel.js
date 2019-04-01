@@ -1,11 +1,13 @@
 import React from 'react';
 import classes from "./NovyZakladatel.module.css"
 import FyzickaOsoba from "./FyzickaOsoba/FyzickaOsoba"
+import OrangeButton from "../../../../../UI/OrangeButton/OrangeButton";
+import TextButton from "../../../../../UI/TextButton/TextButton";
 import PravnickaOsoba from "./PravnickaOsoba/PravnickaOsoba"
 class NovyZakladatel extends React.Component {
 constructor(props) {
 super(props);
-if(this.props.upravitZakladatelaID!=undefined){
+if(this.props.upravitZakladatelaID!==undefined){
 	let upravitSpolocnika={...this.props.spolocnici[this.props.upravitZakladatelaID]}
 	this.state=upravitSpolocnika
 }
@@ -151,10 +153,22 @@ saveAndReset=()=>{
 
 		}
 }
-	this.props.ulozitZakladatela(this.state)
-	  		this.setState({
-      		...initialState
-    	});
+	if(this.props.upravitZakladatelaID!==undefined){
+		this.props.upravitZakladatela(this.state,this.props.upravitZakladatelaID)
+		  		this.setState({
+	      		...initialState
+	    	});	
+	}
+	else{
+		this.props.ulozitZakladatela(this.state)
+		  		this.setState({
+	      		...initialState
+	    	});	
+	}
+
+
+
+
 }
 
 handleInputChange(event) {
@@ -337,8 +351,8 @@ let pravnickaOsoba={
 			<div className={classes.Formular}>
 			{formular}
 			<div className={classes.Controls}>
-			<div className={classes.ControlsZrusit}><button>Zrušiť</button></div>
-			<div className={classes.ControlsUlozit}><button onClick={this.saveAndReset}>Uložiť</button></div>
+			<div className={classes.ControlsZrusit}><TextButton text="Zrušiť" action={this.props.closeModals}>Zrušiť</TextButton></div>
+			<div className={classes.ControlsUlozit}><OrangeButton text="Uložiť" action={this.saveAndReset}>Uložiť</OrangeButton></div>
 			</div>
 			 
 			</div>

@@ -1,13 +1,14 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import classes from "./OrangeButton.module.css"
-
-const orangeButton= (props) => {
+import classes from "./EditIcon.module.css"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+const editIcon= (props) => {
 let style = {...props.style};
 let side=props.side||null;
 let sideClass=null;
 if(side!=null){
 sideClass=classes[side]
+console.log(sideClass)
 }
 if(props.link){
 return(
@@ -15,9 +16,10 @@ return(
 	)	
 }
 return(
-<button style={style} to="" onClick={() => props.action()} className={[sideClass,classes.Button,(props.disabled?classes.Disabled:null)].join(" ")}>{props.text}</button>
+
+<FontAwesomeIcon {...props} style={style} />
 	)
 
 }
 
-export default orangeButton;
+export default editIcon;

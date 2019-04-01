@@ -1,13 +1,14 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import classes from "./OrangeButton.module.css"
+import classes from "./TextButton.module.css"
 
-const orangeButton= (props) => {
+const TextButton= (props) => {
 let style = {...props.style};
 let side=props.side||null;
 let sideClass=null;
 if(side!=null){
 sideClass=classes[side]
+console.log(sideClass)
 }
 if(props.link){
 return(
@@ -20,4 +21,4 @@ return(
 
 }
 
-export default orangeButton;
+export default TextButton;

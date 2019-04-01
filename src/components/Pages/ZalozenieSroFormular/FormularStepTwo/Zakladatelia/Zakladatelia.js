@@ -2,6 +2,7 @@ import React from 'react';
 import classes from "./Zakladatelia.module.css";
 import OrangeButtonIcon from "../../../../UI/OrangeButtonIcon/OrangeButtonIcon";
 import Modal from "../../../../UI/Modal/Modal";
+import EditIcon from "../../../../UI/EditIcon/EditIcon";
 import NovyZakladatel from "./NovyZakladatel/NovyZakladatel"
 const zakladatelia= (props) => {
 	let spolcniciList=[...props.state.spolocnici]
@@ -13,8 +14,8 @@ const zakladatelia= (props) => {
 				<td>{spolocnik.pravnickaOsoba.vyskaVkladu}</td>
 				<td>{spolocnik.pravnickaOsoba.podielSpolocnosti}</td>
 				<td>{spolocnik.pravnickaOsoba.rozsahSplatenia}</td>
-				<td onClick={()=>props.upravitZakladatelaModal(index)}>Upraviť</td>
-				<td>Odobrať</td>
+				<td><EditIcon  color="#7A9AA5" size="lg" icon="edit" onClick={()=>props.upravitZakladatelaModal(index)}>Upraviť</EditIcon></td>
+				<td><EditIcon  color="#7A9AA5" size="lg" icon="trash-alt"  onClick={()=>props.zmazatZakladatela(index)}>Odobrať</EditIcon></td>
 				</tr>
 			)
 		}
@@ -25,8 +26,8 @@ const zakladatelia= (props) => {
 				<td>{spolocnik.fyzickaOsoba.vyskaVkladu}</td>
 				<td>{spolocnik.fyzickaOsoba.podielSpolocnosti}</td>
 				<td>{spolocnik.fyzickaOsoba.rozsahSplatenia}</td>
-				<td onClick={()=>props.upravitZakladatelaModal(index)}>Upraviť</td>
-				<td>Odobrať</td>
+				<td><EditIcon  color="#7A9AA5" size="lg" icon="edit" onClick={()=>props.upravitZakladatelaModal(index)}>Upraviť</EditIcon></td>
+				<td><EditIcon  color="#7A9AA5" size="lg" icon="trash-alt"  onClick={()=>props.zmazatZakladatela(index)}>Odobrať</EditIcon></td>
 			</tr>
 			)
 
@@ -36,8 +37,8 @@ const zakladatelia= (props) => {
 			<h5>Zakladatelia(Spoločníci)</h5>
 			<div className={classes.itemContainer}>
 				<OrangeButtonIcon action={props.vlozitZakladatelaHandler} icon={{type:"plus",size:"1x",color:"white"}} text="Vložiť nového zakladateľa"/>
-				{props.state.modals.vlozitZakladatelaModal?<Modal closeModals={props.closeModals} modalID="vlozitZakladatelaModal" show={props.state.modals.vlozitZakladatelaModal}><NovyZakladatel ulozitZakladatela={props.ulozitZakladatela}/></Modal>:null}
-				{props.state.modals.upravitZakladatelaModal?<Modal closeModals={props.closeModals} modalID="upravitZakladatelaModal" show={props.state.modals.upravitZakladatelaModal}><NovyZakladatel updateZakladatela={props.updateZakladatela} spolocnici={props.state.spolocnici} upravitZakladatelaID={props.state.sideInfo.upravitZakladatelaID} /></Modal>:null}
+				{props.state.modals.vlozitZakladatelaModal?<Modal closeModals={props.closeModals} modalID="vlozitZakladatelaModal" show={props.state.modals.vlozitZakladatelaModal}><NovyZakladatel closeModals={props.closeModals} ulozitZakladatela={props.ulozitZakladatela}/></Modal>:null}
+				{props.state.modals.upravitZakladatelaModal?<Modal closeModals={props.closeModals} modalID="upravitZakladatelaModal" show={props.state.modals.upravitZakladatelaModal}><NovyZakladatel closeModals={props.closeModals} upravitZakladatela={props.upravitZakladatela} spolocnici={props.state.spolocnici} upravitZakladatelaID={props.state.sideInfo.upravitZakladatelaID} /></Modal>:null}
 			</div>		
 				<div className={classes.ZakladateliaList}>
 					<table>

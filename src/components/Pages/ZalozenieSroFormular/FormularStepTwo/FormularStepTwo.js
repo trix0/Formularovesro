@@ -9,7 +9,7 @@ const formularStepTwo= (props) => {
 			<p className={classes.subHeading}>Vyplňte základné imanie a pridajte zakladateľov (spoločníkov) a konateľov.</p>
 			<div className={classes.FormularItems}>
 				<ZakladneImanie/>
-				<Zakladatelia  upravitZakladatelaModal={props.upravitZakladatelaModal} ulozitZakladatela={props.ulozitZakladatela} closeModals={props.closeModals} vlozitZakladatelaHandler={props.vlozitZakladatelaHandler} state={props.state}/>
+				<Zakladatelia zmazatZakladatela={props.zmazatZakladatela} upravitZakladatela={props.upravitZakladatela}  upravitZakladatelaModal={props.upravitZakladatelaModal} ulozitZakladatela={props.ulozitZakladatela} closeModals={props.closeModals} vlozitZakladatelaHandler={props.vlozitZakladatelaHandler} state={props.state}/>
 			</div>
 		</div>
 		);	

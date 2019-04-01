@@ -9,9 +9,9 @@ const formularStepOne= (props) => {
 			<h1 className={classes.formularHeading}>Zvoľte si obchodné meno vašej novej firmy</h1>
 			<p className={classes.subHeading}>Zadajte údaje o vašej novej firme a všetko ostatné vybavíme do dvoch týždňov za vás.<br/> Ušetríte čas s papierovačkami a zaplatíte menej.</p>
 			<div className={classes.FormularItems}>
-			<ObchodneMeno/>
-			<Email/>
-			<Sidlo/>
+			<ObchodneMeno state={props.state} handleInputChange={props.handleInputChange}/>
+			<Email state={props.state} handleInputChange={props.handleInputChange}/>
+			<Sidlo state={props.state} handleInputChange={props.handleInputChange}/>
 			</div>
 		</div>
 		);	

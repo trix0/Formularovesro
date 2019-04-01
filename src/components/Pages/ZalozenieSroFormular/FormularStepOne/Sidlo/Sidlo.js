@@ -13,8 +13,8 @@ const sidlo= (props) => {
 				<div className={classes.InputWrapper}>
 				<div className={classes.ValidationIcon}>{touched?valid?<i><FontAwesomeIcon color="#18C915" size="2x" icon="check-circle" /></i>:<i><FontAwesomeIcon color="red" size="2x" icon="times-circle" /></i>:<i className={classes.ValidationIconHidden}><FontAwesomeIcon color="red" size="2x" icon="times-circle" /></i>}</div>
 					<div className={classes.InputContainer}>
-						<label htmlFor="streetName">Názov ulice</label>
-						<input id="streetName" type="text" name="streetName" placeholder="Názov ulice*" />
+						<label htmlFor="sidlo/ulica">Názov ulice</label>
+						<input onChange={props.handleInputChange} type="text" id="sidlo/ulica"  name="sidlo/ulica"  type="text" placeholder="Názov ulice*" />
 						<div>{valid?null:<div className={classes.error}>{errorMessage?errorMessage:defaultErorr}</div>}</div>
 					</div>
 
@@ -24,8 +24,8 @@ const sidlo= (props) => {
 				<div className={classes.InputWrapper}>
 								<div className={classes.ValidationIcon}>{touched?valid?<i><FontAwesomeIcon color="#18C915" size="2x" icon="check-circle" /></i>:<i><FontAwesomeIcon color="red" size="2x" icon="times-circle" /></i>:<i className={classes.ValidationIconHidden}><FontAwesomeIcon color="red" size="2x" icon="times-circle" /></i>}</div>
 					<div className={classes.InputContainer}>
-						<label htmlFor="supisneCislo">Súpisné čislo</label>
-						<input id="supisneCislo" type="text" name="supisneCislo" placeholder="Súpisné čislo*" />
+						<label htmlFor="sidlo/supisneCislo">Súpisné čislo</label>
+						<input onChange={props.handleInputChange} id="sidlo/supisneCislo" type="text" name="sidlo/supisneCislo" placeholder="Súpisné čislo*" />
 						<div>{valid?null:<div className={classes.error}>{errorMessage?errorMessage:defaultErorr}</div>}</div>
 					</div>
 
@@ -35,8 +35,8 @@ const sidlo= (props) => {
 				<div className={classes.InputWrapper}>
 								<div className={classes.ValidationIcon}>{touched?valid?<i><FontAwesomeIcon color="#18C915" size="2x" icon="check-circle" /></i>:<i><FontAwesomeIcon color="red" size="2x" icon="times-circle" /></i>:<i className={classes.ValidationIconHidden}><FontAwesomeIcon color="red" size="2x" icon="times-circle" /></i>}</div>
 					<div className={classes.InputContainer}>
-						<label htmlFor="OrientacneCislo">Orientačné čislo</label>
-						<input id="OrientacneCislo" type="text" name="orientacneCislo" placeholder="Oričntačné číslo*" />
+						<label htmlFor="sidlo/orientacneCislo">Orientačné čislo</label>
+						<input onChange={props.handleInputChange} id="sidlo/orientacneCislo" type="text" name="sidlo/orientacneCislo" placeholder="Oričntačné číslo*" />
 						<div>{valid?null:<div className={classes.error}>{errorMessage?errorMessage:defaultErorr}</div>}</div>
 					</div>
 
@@ -46,8 +46,8 @@ const sidlo= (props) => {
 				<div className={classes.InputWrapper}>
 								<div className={classes.ValidationIcon}>{touched?valid?<i><FontAwesomeIcon color="#18C915" size="2x" icon="check-circle" /></i>:<i><FontAwesomeIcon color="red" size="2x" icon="times-circle" /></i>:<i className={classes.ValidationIconHidden}><FontAwesomeIcon color="red" size="2x" icon="times-circle" /></i>}</div>
 					<div className={classes.InputContainer}>
-						<label htmlFor="city">Obec*</label>
-						<input id="city" type="text" name="city" placeholder="Napr. Banská Bystrica*" />
+						<label htmlFor="sidlo/obec">Obec*</label>
+						<input onChange={props.handleInputChange} id="sidlo/obec" type="text" name="sidlo/obec" placeholder="Napr. Banská Bystrica*" />
 						<div>{valid?null:<div className={classes.error}>{errorMessage?errorMessage:defaultErorr}</div>}</div>
 					</div>
 
@@ -57,8 +57,8 @@ const sidlo= (props) => {
 				<div className={classes.InputWrapper}>
 								<div className={classes.ValidationIcon}>{touched?valid?<i><FontAwesomeIcon color="#18C915" size="2x" icon="check-circle" /></i>:<i><FontAwesomeIcon color="red" size="2x" icon="times-circle" /></i>:<i className={classes.ValidationIconHidden}><FontAwesomeIcon color="red" size="2x" icon="times-circle" /></i>}</div>
 					<div className={classes.InputContainer}>
-							<label htmlFor="psc">PSČ*</label>
-							<input id="psc" type="text" name="psc" placeholder="#####*" />
+							<label htmlFor="sidlo/psc">PSČ*</label>
+							<input onChange={props.handleInputChange} id="sidlo/psc" type="text" name="sidlo/psc" placeholder="#####*" />
 						<div>{valid?null:<div className={classes.error}>{errorMessage?errorMessage:defaultErorr}</div>}</div>
 					</div>
 
@@ -71,13 +71,13 @@ const sidlo= (props) => {
 				<div className={classes.InputWrapper}>
 								<div className={classes.ValidationIcon}>{touched?valid?<i><FontAwesomeIcon color="#18C915" size="2x" icon="check-circle" /></i>:<i><FontAwesomeIcon color="red" size="2x" icon="times-circle" /></i>:<i className={classes.ValidationIconHidden}><FontAwesomeIcon color="red" size="2x" icon="times-circle" /></i>}</div>
 					<div className={classes.InputContainer}>
-						<label htmlFor="propretyType">Druh priestoru*</label>
-						<select id="propretyType" name="propretyType">
-			  				<option value="nebytovyPriestor">Nebytový priestor</option>				
-			  				<option value="bytVBytovomDome">Byt v bytovom dome</option>				
-			  				<option value="inaBudova">Iná budova</option>				
-			  				<option value="rodinnyDom">Rodinný dom</option>				
-			  				<option value="samostatneStojacaGaraz">Samostatne stojaca garáž</option>				
+						<label htmlFor="sidlo/suhlasVlastnika/druh">Druh priestoru*</label>
+						<select onChange={props.handleInputChange}  id="sidlo/suhlasVlastnika/druh" name="sidlo/suhlasVlastnika/druh">
+			  				<option value="Nebytový priestor">Nebytový priestor</option>				
+			  				<option value="Byt v bytovom dome">Byt v bytovom dome</option>				
+			  				<option value="Rodinný dom">Rodinný dom</option>				
+			  				<option value="Samostatne stojaca garáž">Samostatne stojaca garáž</option>				
+			  				<option value="Iná budova">Iná budova</option>				
 						</select>
 						<div>{valid?null:<div className={classes.error}>{errorMessage?errorMessage:defaultErorr}</div>}</div>
 					</div>
@@ -87,8 +87,8 @@ const sidlo= (props) => {
 				<div className={classes.InputWrapper}>
 								<div className={classes.ValidationIcon}>{touched?valid?<i><FontAwesomeIcon color="#18C915" size="2x" icon="check-circle" /></i>:<i><FontAwesomeIcon color="red" size="2x" icon="times-circle" /></i>:<i className={classes.ValidationIconHidden}><FontAwesomeIcon color="red" size="2x" icon="times-circle" /></i>}</div>
 					<div className={classes.InputContainer}>
-							<label htmlFor="menoVlastnika">Meno vlastníka*</label>
-							<input id="menoVlastnika" type="text" name="menoVlastnika" placeholder="Meno*" />
+							<label htmlFor="sidlo/suhlasVlastnika/vlastnikMeno">Meno vlastníka*</label>
+							<input onChange={props.handleInputChange} id="sidlo/suhlasVlastnika/vlastnikMeno" type="text" name="sidlo/suhlasVlastnika/vlastnikMeno" placeholder="Meno*" />
 						<div>{valid?null:<div className={classes.error}>{errorMessage?errorMessage:defaultErorr}</div>}</div>
 					</div>
 
@@ -97,8 +97,8 @@ const sidlo= (props) => {
 				<div className={classes.InputWrapper}>
 								<div className={classes.ValidationIcon}>{touched?valid?<i><FontAwesomeIcon color="#18C915" size="2x" icon="check-circle" /></i>:<i><FontAwesomeIcon color="red" size="2x" icon="times-circle" /></i>:<i className={classes.ValidationIconHidden}><FontAwesomeIcon color="red" size="2x" icon="times-circle" /></i>}</div>
 					<div className={classes.InputContainer}>
-							<label htmlFor="priezviskoVlastnika">Priezvisko vlastníka*</label>
-							<input id="priezviskoVlastnika" type="text" name="priezviskoVlastnika" placeholder="Priezvisko*" />
+							<label htmlFor="sidlo/suhlasVlastnika/vlasnikPriezvisko">Priezvisko vlastníka*</label>
+							<input onChange={props.handleInputChange} id="sidlo/suhlasVlastnika/vlasnikPriezvisko" type="text" name="sidlo/suhlasVlastnika/vlasnikPriezvisko" placeholder="Priezvisko*" />
 						<div>{valid?null:<div className={classes.error}>{errorMessage?errorMessage:defaultErorr}</div>}</div>
 					</div>
 

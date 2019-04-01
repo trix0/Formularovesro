@@ -5,7 +5,9 @@ import OrangeButton from "../../UI/OrangeButton/OrangeButton";
 import FormularStepOne from "./FormularStepOne/FormularStepOne"
 import FormularStepTwo from "./FormularStepTwo/FormularStepTwo"
 class  ZalozenieSroFormular extends Component{
- state = {
+constructor(props) {
+super(props);
+ this.state = {
     sideInfo:{
       upravitZakladatelaID:null
     },
@@ -20,8 +22,9 @@ class  ZalozenieSroFormular extends Component{
     price:0,
     loading: false,
     obchodneMeno:"",
-    druhSpolocnosti:"",
+    druhSpolocnosti:"s.r.o.",
     email:"",
+    emailRepeat:"",
     telefon:"",
     sidlo:{
         ulica:"",
@@ -30,8 +33,107 @@ class  ZalozenieSroFormular extends Component{
         obec:"",
         psc:"",
         suhlasVlastnika:{
-            druh:"",
-            vlastnik:""
+            druh:"Nebytový priestor",
+            vlastnikMeno:"",
+            vlasnikPriezvisko:""
+        }
+    },
+    zakladneImanie:{
+        vyska:5000,
+        rozsahSplatenia:5000,
+    },
+    spolocnici:[],
+    konatelia:[],
+    uzivateliaVyhod:{},
+    sposobKonania:"",
+    predmetPodnikania:[],
+    fakturacneUdaje:{
+        ico:"",
+        obchodneMeno:"",
+        dic:"",
+        icDPH:"",
+        ulica:"",
+        supisneCislo:null,
+        orientacneCislo:null,
+        obec:"",
+        psc:"",
+        stat:""
+    },
+  validation:{    
+    obchodneMeno:{
+      valid:false,
+      touched:false,
+      error:"",
+      rules:["required"]
+    },
+    druhSpolocnosti:{
+      valid:false,
+      touched:false,
+      error:"",
+      rules:[]
+    },
+    email:{
+      valid:false,
+      touched:false,
+      error:"",
+      rules:["required","email"]
+    },
+    emailRepeat:{
+      valid:false,
+      touched:false,
+      error:"",
+      rules:["required","emailRepeat"]
+    },
+    telefon:{
+      valid:false,
+      touched:false,
+      error:"",
+      rules:["telefon"]
+    },
+    sidlo:{
+        ulica:{
+          valid:false,
+          touched:false,
+          error:"",
+          rules:["required"]
+        },
+        supisneCislo:{
+          valid:false,
+          touched:false,
+          error:"",
+          rules:["number"]
+        },
+        orientacneCislo:{
+          valid:false,
+          touched:false,
+          error:"",
+          rules:["required","number"]
+        },
+        obec:{
+          valid:false,
+          touched:false,
+          error:"",
+          rules:["required"]
+        },
+        psc:{
+          valid:false,
+          touched:false,
+          error:"",
+          rules:["required","number"]
+        },
+        suhlasVlastnika:{
+            druh:{
+              valid:false,
+              touched:false,
+              error:"",
+              rules:[]
+            },
+            vlastnik:{
+              valid:false,
+              touched:false,
+              error:"",
+              rules:["required"]
+            }
         }
     },
     zakladneImanie:{
@@ -55,7 +157,12 @@ class  ZalozenieSroFormular extends Component{
         psc:"",
         stat:""
     }
+  }
+}
+this.handleInputChange = this.handleInputChange.bind(this)
 };
+
+
 
   componentWillMount() {
 
@@ -70,7 +177,99 @@ class  ZalozenieSroFormular extends Component{
     });
   }
 
+  handleInputChange(event) {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+    let newNameTarget=name.split("/");
 
+    this.formValidation(newNameTarget,value);
+
+    if(newNameTarget.length===2){
+      let oldState={...this.state};
+      oldState[newNameTarget[0]][newNameTarget[1]]=value;
+      this.setState({
+          ...oldState
+      });
+    }
+    else if(newNameTarget.length===3){
+      let oldState={...this.state};
+      oldState[newNameTarget[0]][newNameTarget[1]][newNameTarget[2]]=value;
+      this.setState({
+          ...oldState
+      });
+    }
+    else{
+        this.setState({
+          [name]: value
+        }); 
+    }
+
+
+
+
+}
+  formValidation=(target,testingValue)=>{
+    if(target.length===2){
+
+    }
+    else if(target.length===3){
+
+    }
+    else{
+    let targetRules=this.state.validation[target].rules
+    console.log(targetRules)
+    let validation=this.inputValidator(testingValue,targetRules)
+    console.log(validation)
+    console.log(target)
+    let newState={...this.state};
+    newState.validation[target].valid=validation.valid
+    newState.validation[target].error=validation.error
+    newState.validation[target].touched=true;
+    this.setState({
+      newState
+    }); 
+    }
+  }
+  inputValidator=(inputValue,rules)=>{
+    let error=""
+    let valid=false;
+
+    let required=(input)=>{
+      if(input==null || input==""){
+        error="Pole nemôže byť prázdne"
+        return false;
+      }
+      valid=true
+      return valid
+    }    
+
+    let obchodneMeno=(input)=>{
+
+    }
+
+    rules.forEach((rule)=>{
+    if(rule==="required"){
+    valid=required(inputValue)
+    }
+
+    })
+  return({valid:valid,error:error})
+  }
+
+  fakeApiCall(obchodneMeno,stallTime = 3000) {
+    return new Promise(resolve =>{
+      setTimeout(()=>{
+        if(obchodneMeno==="test"){
+          resolve("Exists")  
+        }
+        else{
+          resolve("DoesntExist")   
+        }
+      }, stallTime)
+      
+    });
+  }
   nextStep = () => {
     let { step,stepAccessMax,numberOfSteps} = this.state;
     if(step===numberOfSteps){
@@ -117,6 +316,8 @@ class  ZalozenieSroFormular extends Component{
     })
   };
 
+
+
   upravitZakladatelaModal=(index)=>{
     console.log(index)
     let newValue={upravitZakladatelaModal:true}
@@ -139,9 +340,34 @@ class  ZalozenieSroFormular extends Component{
     })
     this.closeModals()
   };
+  upravitZakladatela=(updated,index)=>{
+    console.log(updated)
+    console.log(index)
+    this.setState(oldState=>{
+      let newState={...oldState}
+      newState=newState.spolocnici[index]=updated;
+      return(newState)
+    })
+    this.closeModals()
+
+  }
+
+  zmazatZakladatela=(index)=>{
+
+    this.setState(oldState=>{
+      let newState={...oldState}
+      newState=newState.spolocnici.splice(index,1)
+      return(newState)
+    })
+    this.closeModals()
+
+  }
 
   closeModals=()=>{
-    let newValue={vlozitZakladatelaModal:false}
+    let newValue={
+      vlozitZakladatelaModal:false,
+      upravitZakladatelaModal:false
+    }
     this.setState({
       modals:newValue
     })
@@ -152,9 +378,9 @@ class  ZalozenieSroFormular extends Component{
 
   switch(this.state.step) {
     case 1:
-    	return <FormularStepOne/>
+    	return <FormularStepOne handleInputChange={this.handleInputChange} state={this.state}/>
     case 2:
-    	return <FormularStepTwo upravitZakladatelaModal={this.upravitZakladatelaModal} ulozitZakladatela={this.ulozitZakladatela} closeModals={this.closeModals} vlozitZakladatelaHandler={this.vlozitZakladatelaHandler} state={this.state}/>
+    	return <FormularStepTwo zmazatZakladatela={this.zmazatZakladatela} upravitZakladatela={this.upravitZakladatela} upravitZakladatelaModal={this.upravitZakladatelaModal} ulozitZakladatela={this.ulozitZakladatela} closeModals={this.closeModals} vlozitZakladatelaHandler={this.vlozitZakladatelaHandler} state={this.state}/>
     case 3:
     	return 3;
     case 4:
